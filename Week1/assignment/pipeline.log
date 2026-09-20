@@ -1,0 +1,14 @@
+2026-09-20 18:54:10  INFO  Connecting to database…
+2026-09-20 18:54:10  CRITICAL  Cannot connect: connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+2026-09-20 18:55:00  INFO  Connecting to database…
+2026-09-20 18:55:00  CRITICAL  Cannot connect: connection to server at "localhost" (::1), port 5432 failed: fe_sendauth: no password supplied
+
+2026-09-20 18:56:28  INFO  Connecting to database…
+2026-09-20 18:56:28  INFO  Running: Revenue by city
+2026-09-20 18:56:28  INFO  Revenue by city: 10 rows returned
+2026-09-20 18:56:28  INFO  Running: Loyalty bonus drivers
+2026-09-20 18:56:28  INFO  Loyalty bonus drivers: 13 rows returned
+2026-09-20 18:56:28  INFO  Running: Outcomes by status
+2026-09-20 18:56:28  INFO  Outcomes by status: 3 rows returned
+2026-09-20 18:56:28  INFO  Connection closed. Done.
