@@ -1,0 +1,4 @@
+2026-10-05 00:39:02  INFO  Connecting to database…
+2026-10-05 00:39:02  INFO  Running: Rides per driver
+2026-10-05 00:39:02  INFO  Rides per driver: 11 rows returned
+2026-10-05 00:39:02  INFO  Connection closed. Done.
