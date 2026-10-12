@@ -25,9 +25,15 @@ logger = logging.getLogger(__name__)
 
 # TODO: fill in this query to match Q1 from week2_queries.sql
 RIDES_PER_DRIVER_QUERY = """
-    -- Q1: name, total_rides — completed rides only, ordered by total_rides desc
+    SELECT 
+        d.name,
+        COUNT(t.trip_id) AS total_rides
+    FROM drivers d
+    JOIN trips t ON d.driver_id = t.driver_id
+    WHERE t.status = 'completed'
+    GROUP BY d.driver_id, d.name
+    ORDER BY total_rides DESC;
 """
-
 
 def get_connection():
     load_dotenv()
@@ -54,12 +60,13 @@ def run_query(conn, query, label):
     logger.info(f"{label}: {len(rows)} rows returned")
     return rows
 
-
 def print_rides_per_driver(rows):
     print("\n-- Rides per driver --")
-    # TODO: loop over rows and print each one formatted, e.g.
-    # f"{name:<15} | completed rides: {total_rides:>4}"
-
+    print(f"{'Driver Name':<25} | {'Completed Rides':>15}")
+    print("-" * 43)
+    for name, total_rides in rows:
+        print(f"{name:<25} | {total_rides:>15}")
+    print("-" * 43)
 
 def main():
     logger.info("Connecting to database…")
